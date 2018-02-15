@@ -1,0 +1,37 @@
+{
+  "name": "@lonord/pi-status-rpc",
+  "version": "1.0.0",
+  "description": "System status rpc server for raspberry pi",
+  "bin": {
+    "pi-status-rpc": "lib/index.js"
+  },
+  "scripts": {
+    "build": "rimraf lib && tsc",
+    "build4debug": "rimraf lib && tsc --inlineSourceMap",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@lonord.name:/~/pi-status-rpc.git"
+  },
+  "keywords": [
+    "status",
+    "eventsource",
+    "rpc"
+  ],
+  "author": "Loy B. <lonord@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/body-parser": "^1.16.8",
+    "@types/express": "^4.11.1",
+    "@types/node": "^9.4.6",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "commander": "^2.14.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "ssestream": "^1.0.1"
+  }
+}
