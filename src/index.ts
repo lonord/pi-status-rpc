@@ -18,7 +18,7 @@ program
 	.option('-h, --host', 'host to listen, default 0.0.0.0')
 	.parse(process.argv)
 
-console.log(`> pi-status-rpc [version: ${pkg.version}]`)
+console.log(`> pi-status-rpc <version: ${pkg.version}>`)
 
 const app = express()
 
@@ -26,8 +26,8 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use('/http', httpRouter)
-app.use('/sse', sseRouter)
+app.use('/http', httpRouter())
+app.use('/sse', sseRouter())
 
 const port = program.port || 3000
 const host = program.host || '0.0.0.0'
