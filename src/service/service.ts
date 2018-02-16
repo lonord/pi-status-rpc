@@ -10,10 +10,8 @@ readdirSync(__dirname).filter((f) => f.endsWith('.js') && f !== 'service.js').fo
 		const s = (r.default || r) as Service
 		if (s) {
 			if (isSSEService(s)) {
-				console.log(`> load sse service: ${s.name}`)
 				sseServices.push(s)
 			} else if (isHTTPService(s)) {
-				console.log(`> load http service: ${s.name}`)
 				httpServices.push(s)
 			} else {
 				console.log(`> ignore unknow service: ${s.name}`)

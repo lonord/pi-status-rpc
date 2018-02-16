@@ -1,6 +1,6 @@
 {
   "name": "@lonord/pi-status-rpc",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "System status rpc server for raspberry pi",
   "bin": {
     "pi-status-rpc": "lib/index.js"
