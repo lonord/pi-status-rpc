@@ -10,13 +10,7 @@ const service: SSEService = {
 		if (isNaN(interval)) {
 			interval = 0
 		}
-		const ifName = params.ifName
-		if (!ifName) {
-			const e = new Error(`param 'ifName' is required`) as any
-			e.errCode = 400
-			throw e
-		}
-		const watcher = watchTrafficSpeed(ifName, interval, onData, onError)
+		const watcher = watchTrafficSpeed(params.ifName, interval, onData, onError)
 		return {
 			close: watcher.stop
 		}

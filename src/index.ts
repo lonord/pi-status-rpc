@@ -18,6 +18,8 @@ program
 	.option('-h, --host', 'host to listen, default 0.0.0.0')
 	.parse(process.argv)
 
+console.log(`> pi-status-rpc [version: ${pkg.version}]`)
+
 const app = express()
 
 app.use(cors())

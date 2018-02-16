@@ -20,6 +20,8 @@ for (const service of sseServices) {
 				event: 'error',
 				data: err.message || err
 			})
+			sseStream.end()
+			serviceInstance && serviceInstance.close()
 		})
 
 		res.on('close', () => {
