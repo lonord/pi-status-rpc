@@ -48,6 +48,7 @@ export interface HTTPService extends Service {
 
 interface Service {
 	name: string
+	description: string
 	version: string
 	type: 'sse' | 'http'
 }

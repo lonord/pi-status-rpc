@@ -4,6 +4,7 @@ const service: SSEService = {
 	name: 'example-sse',
 	type: 'sse',
 	version: '1.0.0',
+	description: 'example sse service',
 	create: (params, onData, onError) => {
 		let count = 0
 		const timer = setInterval(() => {

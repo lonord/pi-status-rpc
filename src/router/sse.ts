@@ -6,6 +6,11 @@ import { collectParams } from '../util/params'
 export default () => {
 	const router = Router()
 
+	router.get('/', (req, res) => {
+		const result = sseServices.reduce((prev, curr) => `${prev}\n${curr.name}\n${curr.description}\n`, '')
+		res.end(result)
+	})
+
 	for (const service of sseServices) {
 		console.log(`> mount sse service: ${service.name}`)
 		router.all(`/${service.name}`, (req, res) => {
