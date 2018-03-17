@@ -1,6 +1,6 @@
 {
   "name": "@lonord/pi-status-rpc",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "System status rpc server for raspberry pi",
   "bin": {
     "pi-status-rpc": "lib/index.js"
@@ -28,7 +28,7 @@
     "rimraf": "^2.6.2"
   },
   "dependencies": {
-    "@lonord/disk-util": "^2.0.0",
+    "@lonord/disk-util": "^2.0.1",
     "@lonord/net-get-interface": "^1.0.4",
     "@lonord/net-traffic-monitor": "^2.0.1",
     "body-parser": "^1.18.2",
