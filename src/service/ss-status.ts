@@ -14,6 +14,9 @@ const service: HTTPService = {
 	description: pkg.description,
 	execute: async (params) => {
 		const action = params.action
+		if (!action) {
+			throw new Error('parameter `action` is required')
+		}
 		let result = 'OK'
 		if (action === 'start') {
 			await ssClient.start()
@@ -29,6 +32,8 @@ const service: HTTPService = {
 			await ssClient.setSSMode(mode)
 		} else if (action === 'updateStandardGFWList') {
 			await ssClient.updateStandardGFWList()
+		} else {
+			throw new Error(`invalid action \`${action}\``)
 		}
 		return result
 	}
